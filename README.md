@@ -1,4 +1,3 @@
-```markdown
 # LSB Steganography Application
 
 This is a Python application for performing Least Significant Bit (LSB) steganography on images. LSB steganography is a technique for hiding a secret message within an image by modifying the least significant bit of each pixel's color channel. The application provides the functionality to encode a secret message into an image and decode a hidden message from an encoded image.
@@ -22,9 +21,9 @@ To run this application, you need the following dependencies:
 
 You can install the required libraries using pip:
 
-```bash
+bash
 pip install pillow
-```
+
 
 ## Usage
 
@@ -58,11 +57,10 @@ pip install pillow
 
 ## Security
 
-- **Password Protection**: If you choose to set a password during encoding, the application will require the correct password during decoding to ensure that only authorized users can access the hidden message.
+- *Password Protection*: If you choose to set a password during encoding, the application will require the correct password during decoding to ensure that only authorized users can access the hidden message.
 
-- **Encryption**: This application focuses on steganography (hiding data), not encryption (protecting data). If you have sensitive information, consider encrypting it separately before using this tool.
+- *Encryption*: This application focuses on steganography (hiding data), not encryption (protecting data). If you have sensitive information, consider encrypting it separately before using this tool.
 
 ## Contributing
 
 Contributions to this project are welcome. If you have suggestions for improvements or bug fixes, please open an issue or submit a pull request.
-```
