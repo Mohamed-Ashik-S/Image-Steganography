@@ -1,49 +1,62 @@
-Image Steganography with LSB Algorithm
-======================================
+# LSB Steganography Application
 
-Overview
---------
+This is a Python application for performing Least Significant Bit (LSB) steganography on images. LSB steganography is a technique for hiding a secret message within an image by modifying the least significant bit of each pixel's color channel. The application provides the functionality to encode a secret message into an image and decode a hidden message from an encoded image.
 
-Image Steganography is a technique used to hide secret data within digital images without visibly altering the image's appearance to the human eye. The LSB (Least Significant Bit) algorithm is a simple and widely used method for this purpose. It works by replacing the least significant bit of each color channel in the image with a bit of the secret data, making it difficult to perceive any visible changes in the image.
+## Table of Contents
 
-Encoding (Hiding the Secret Data)
----------------------------------
+- [Requirements](#requirements)
+- [Usage](#usage)
+  - [Encoding a Message](#encoding-a-message)
+  - [Decoding a Message](#decoding-a-message)
+- [Security](#security)
+- [Contributing](#contributing)
 
-1.  Convert Secret Data into Binary Format: The secret message is first converted into binary form, representing each character using 8 bits.
+## Requirements
 
-2.  Select an Image for Steganography: Choose a cover image that will hold the secret data. This image should be large enough to accommodate the secret message.
+To run this application, you need the following dependencies:
 
-3.  Loop Through the Pixels of the Image: Starting from the top-left corner, iterate through the pixels of the image.
+- Python 3.x
+- tkinter (Python's standard GUI library)
+- Pillow (PIL) library for image processing
 
-4.  Modify the Least Significant Bit of Each Color Channel: For each pixel, modify the least significant bit of the red, green, and blue color channels with the corresponding bit from the binary representation of the secret message.
+You can install the required libraries using pip:
 
-5.  Terminate the Message: To ensure we can extract the hidden message later, we add a termination delimiter to the binary message (e.g., "00000000"). This delimiter helps us identify the end of the hidden data when decoding.
+```bash
+pip install pillow
+```
 
-6.  Save the Modified Image: The image with the hidden message is saved, which appears the same as the original image but contains the secret data.
+## Usage
 
-Decoding (Extracting the Secret Data)
--------------------------------------
+### Encoding a Message
 
-1.  Select the Encoded Image: Choose the image that contains the hidden data (the output from the encoding step).
+1. Launch the application by running the `lsb_steganography.py` script.
 
-2.  Loop Through the Pixels of the Image: Iterate through the pixels of the image, similar to the encoding step.
+2. Open an image by clicking the "Open Image" button. Supported image formats are PNG, JPG, and JPEG.
 
-3.  Extract the Least Significant Bit of Each Color Channel: For each pixel, extract the least significant bit of the red, green, and blue color channels.
+3. Enter the secret message you want to hide in the "Secret Message" input field.
 
-4.  Combine the Bits to Form Binary Data: Combine the extracted bits to form the binary representation of the hidden message.
+4. Optionally, set a password in the "Password" input field. This password will be used to decode the message later.
 
-5.  Find the Termination Delimiter: Locate the termination delimiter ("00000000") in the binary message to determine the end of the hidden data.
+5. Click the "Set Password" button to confirm the password (if set).
 
-6.  Convert the Binary Data to the Original Message: Remove the termination delimiter and convert the binary data back into the original secret message.
+6. Click the "Encode" button to hide the secret message in the selected image. The encoded image will be saved with a `.png` extension.
 
-Capacity and Security
----------------------
+### Decoding a Message
 
-The capacity of LSB steganography depends on the size of the cover image and the amount of hidden data. If the hidden data exceeds the capacity of the cover image, the secret message will not be completely hidden and may become visible or lost during the process.
+1. Launch the application by running the `lsb_steganography.py` script.
 
-While LSB steganography is a simple method, it may not be highly secure against sophisticated attacks or specific image manipulations. Therefore, for more secure applications, more advanced steganography techniques and encryption methods are used.
+2. Open the encoded image (with the hidden message) by clicking the "Open Image" button.
 
-Disclaimer
-----------
+3. Enter the password (if set during encoding) in the "Enter PIN" input field.
 
-Steganography should be used responsibly and ethically. Unauthorized use of steganography techniques to hide sensitive or harmful information in images can be illegal and unethical. Always respect privacy laws and regulations while using steganography tools.
+4. Click the "Decode" button to reveal the hidden message. The decoded message will be displayed in the "Decoded Message" section.
+
+## Security
+
+- **Password Protection**: If you choose to set a password during encoding, the application will require the correct password during decoding to ensure that only authorized users can access the hidden message.
+
+- **Encryption**: This application focuses on steganography (hiding data), not encryption (protecting data). If you have sensitive information, consider encrypting it separately before using this tool.
+
+## Contributing
+
+Contributions to this project are welcome. If you have suggestions for improvements or bug fixes, please open an issue or submit a pull request.
