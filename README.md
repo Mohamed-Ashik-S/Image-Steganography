@@ -41,7 +41,7 @@ pip install pillow
 
 6. Click the "Encode" button to hide the secret message in the selected image. The encoded image will be saved with a `.png` extension.
 
-   ![Encoding](https://github.com/Mohamed-Ashik-S/Image-Steganography/raw/main/encoding_image.png)
+   ![Encoding](https://github.com/Mohamed-Ashik-S/Image-Steganography/blob/main/encoding_image.png)
 
 ### Decoding a Message
 
@@ -53,7 +53,7 @@ pip install pillow
 
 4. Click the "Decode" button to reveal the hidden message. The decoded message will be displayed in the "Decoded Message" section.
 
-   ![Decoding](https://github.com/Mohamed-Ashik-S/Image-Steganography/raw/main/Decoding_image.png)
+   ![Decoding](https://github.com/Mohamed-Ashik-S/Image-Steganography/blob/main/Decoding_image.png)
 
 ## Security
 
